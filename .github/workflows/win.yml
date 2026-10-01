@@ -88,7 +88,7 @@ jobs:
         shell: bash
         run: |
           cd "$TBUILD/$REPO_NAME/cmake"
-          git fetch origin master
+          git fetch --depth=100 origin master
           git checkout 6ba41de74991f28260f9d02dc64899c642afa945
           git log -1 --oneline
 
