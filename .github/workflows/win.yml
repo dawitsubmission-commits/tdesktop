@@ -84,6 +84,14 @@ jobs:
           submodules: recursive
           path: ${{ env.TBUILD }}\${{ env.REPO_NAME }}
 
+      - name: Update cmake helpers (ffmpeg library names fix).
+        shell: bash
+        run: |
+          cd "$TBUILD/$REPO_NAME/cmake"
+          git fetch origin master
+          git checkout 6ba41de74991f28260f9d02dc64899c642afa945
+          git log -1 --oneline
+
       - name: First set up.
         shell: bash
         run: |
